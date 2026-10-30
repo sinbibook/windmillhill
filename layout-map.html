@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 렌더 게이트: 매핑 전 placeholder 깜빡임 방지 (매핑 완료 시 페이드인) -->
+    <style>
+      html.tpl-loading body {
+        opacity: 0;
+      }
+      body {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+    <script>
+      document.documentElement.classList.add('tpl-loading');
+      window.__tplReveal = function () {
+        document.documentElement.classList.remove('tpl-loading');
+      };
+      setTimeout(function () {
+        window.__tplReveal && window.__tplReveal();
+      }, 3000);
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <title data-page-title>가평 풍차펜션</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="가평 풍차펜션" />
+  <meta property="og:description" content="가평 풍차펜션에서 넓은 테라스와 시원한 수영장, 바베큐장을 함께 즐기며 단체 여행에 딱 맞는 여유롭고 특별한 하루를 완성해보세요." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/06/tM1pnjiClcA0.jpg" />
+  <meta property="og:url" content="https://windmillhill.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="가평 풍차펜션" />
+  <meta name="twitter:description" content="가평 풍차펜션에서 넓은 테라스와 시원한 수영장, 바베큐장을 함께 즐기며 단체 여행에 딱 맞는 여유롭고 특별한 하루를 완성해보세요." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/06/tM1pnjiClcA0.jpg" />
+  <meta name="naver-site-verification" content="2665c84480890364fe88dda9e931a0eb51d5e7ae" />
+  <meta name="google-site-verification" content="ubsG-9pfPEjhj0u6BWNkSKTabSGMUizJmj0Dgm1838w" />
+</head>
+
+  <body oncontextmenu="return false;" onselectstart="return false" ondragstart="return false;">
+    <div id="wrap">
+      <div id="header-wrap"></div>
+
+      <div id="container">
+        <!-- 원본 room.html (room_id 없는 목록 화면). ROOMS 대메뉴의 랜딩이자 "미리보기" 링크 대상.
+             백오피스 편집 화면 라벨은 "배치도 (선택)" — layoutMap.hero 가 페이지 히어로,
+             layoutMap.about 이 하단 배치도 이미지에 대응한다. -->
+        <section id="content" class="sub2_1 sub_room">
+          <!-- 원본 room.html 목록 화면에는 .visual_title 이 없다 (객실상세 / special 도 동일).
+               히어로는 배경 이미지 전용이다. 높이는 CSS height:100vh 가 담당한다. -->
+          <div class="sub_visual_wide visual" data-layout-map-hero-bg></div>
+          <!--// sub_visual -->
+
+          <div class="sub_cont">
+            <!-- s: main_room — 객실 슬라이더 (index.html 과 동일 구조) -->
+            <div class="main_room">
+              <div class="room_list">
+                <div class="main_title sub_inner">
+                  <span data-index-eyebrow>WELCOME TO PENSION</span>
+                  <h3 data-index-room-title>Room Preview</h3>
+                  <!-- data-* 속성 : data-index-room-description (index.essence.description — index 와 같은 소스) -->
+                  <p data-index-room-description></p>
+                </div>
+                <div class="room_sld_wrap">
+                  <div class="swiper-container room_list_sld">
+                    <!-- data-* 속성 : data-room-list-slides | 동적 매핑 필요
+                         customFields.roomtypes[] × rooms[] id 매칭 (index 와 동일) -->
+                    <div class="swiper-wrapper" data-room-list-slides></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--// main_room -->
+
+            <!-- s: 배치도 이미지 (layoutMap.about) — 이미지가 없으면 매퍼가 통째로 숨긴다 -->
+            <div class="room_map layout_map_wide" data-layout-map-wrap>
+              <!-- data-* 속성 : data-layout-map-image
+                   pages.layoutMap.sections[0].about.images[isSelected]
+                   배치도는 도면이라 잘리면 안 되므로 background(cover) 가 아니라 <img> 로 넣는다 -->
+              <img data-layout-map-image alt="배치도" />
+            </div>
+            <!--// 배치도 -->
+          </div>
+          <!--// sub_cont -->
+        </section>
+      </div>
+
+      <div id="footer-wrap"></div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/image-helpers.js"></script>
+    <script src="js/preview-handler.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="js/data-mapper/pages/layout-map-mapper.js"></script>
+    <script src="js/header-footer-loader.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/pages/layout-map.js"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 렌더 게이트: 매핑 전 placeholder 깜빡임 방지 (매핑 완료 시 페이드인) -->
+    <style>
+      html.tpl-loading body {
+        opacity: 0;
+      }
+      body {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+    <script>
+      document.documentElement.classList.add('tpl-loading');
+      window.__tplReveal = function () {
+        document.documentElement.classList.remove('tpl-loading');
+      };
+      setTimeout(function () {
+        window.__tplReveal && window.__tplReveal();
+      }, 3000);
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <title data-page-title>가평 풍차펜션 - 시설안내</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="가평 풍차펜션 - 시설안내" />
+  <meta property="og:description" content="가평 풍차펜션에서 넓은 테라스와 시원한 수영장, 바베큐장을 함께 즐기며 단체 여행에 딱 맞는 여유롭고 특별한 하루를 완성해보세요." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/06/tM1pnjiClcA0.jpg" />
+  <meta property="og:url" content="https://windmillhill.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="가평 풍차펜션 - 시설안내" />
+  <meta name="twitter:description" content="가평 풍차펜션에서 넓은 테라스와 시원한 수영장, 바베큐장을 함께 즐기며 단체 여행에 딱 맞는 여유롭고 특별한 하루를 완성해보세요." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/06/tM1pnjiClcA0.jpg" />
+  <meta name="naver-site-verification" content="2665c84480890364fe88dda9e931a0eb51d5e7ae" />
+  <meta name="google-site-verification" content="ubsG-9pfPEjhj0u6BWNkSKTabSGMUizJmj0Dgm1838w" />
+</head>
+
+  <body oncontextmenu="return false;" onselectstart="return false" ondragstart="return false;">
+    <div id="wrap">
+      <div id="header-wrap"></div>
+
+      <div id="container">
+        <!-- 원본 special1~N.html (부대시설). ?id= 로 시설을 고르고, 없으면 첫 번째. -->
+        <section id="content" class="sub3_1 sub_special">
+          <div class="sub_visual_wide visual">
+            <div class="sub_visual_box">
+              <div class="swiper-container">
+                <!-- data-* 속성 : data-special-hero-slides | 동적 매핑 필요
+                     property.facilities[current].images (배경 슬라이드) -->
+                <div class="swiper-wrapper" data-special-hero-slides></div>
+                <div class="swiper-button-prev"><img src="images/arrow_left.png" alt="prev" /></div>
+                <div class="swiper-button-next"><img src="images/arrow_right.png" alt="next" /></div>
+              </div>
+            </div>
+          </div>
+          <!--// sub_visual -->
+
+          <div class="sub_cont">
+            <div class="view_cate_box">
+              <div class="sub_title">
+                <!-- data-* 속성 : data-special-name-en -->
+                <h3 data-special-name-en></h3>
+                <span data-property-caption="WELCOME TO {nameEn}"></span>
+              </div>
+              <div class="sub_cate_wrap">
+                <!-- data-* 속성 : data-special-nav | 동적 매핑 필요
+                     property.facilities[] → li 동적 생성 (현재 시설 .on, 이름 없으면 skip) -->
+                <ul data-special-nav>
+                  <!-- MAPPER: facilities[] → <li><a href="./facility.html?id={id}"> -->
+                </ul>
+              </div>
+            </div>
+
+            <div class="sub_txt">
+              <!-- data-* 속성 : data-special-name -->
+              <em data-special-name></em>
+              <!-- data-* 속성 : data-special-description
+                   facilities[current].description → 폴백 usageGuide -->
+              <p data-special-description></p>
+            </div>
+
+            <div class="sub_img_box">
+              <!-- data-* 속성 : data-special-images | 동적 매핑 필요 (최대 4장) -->
+              <ul class="sub_inner" data-special-images>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+
+            <div class="sub_img_box sub_inner" data-special-wide-wrap>
+              <!-- data-* 속성 : data-special-wide-image -->
+              <!-- ⚠️ `src` 를 비워 두지 않는다. `src=""` 는 브라우저가 현재 페이지를 다시 요청한다.
+                   매퍼가 채우기 전까지 속성 자체를 두지 않는다. -->
+              <img alt="부대시설 이미지" data-special-wide-image />
+            </div>
+
+            <div class="main_special inner">
+              <div class="main_title">
+                <h3>SPECIAL</h3>
+                <span data-property-caption="WELCOME TO {nameEn}"></span>
+              </div>
+              <ul data-special-list>
+                <!-- MAPPER: facilities[] 공용 목록 -->
+              </ul>
+            </div>
+          </div>
+          <!--// sub_cont -->
+        </section>
+      </div>
+
+      <div id="footer-wrap"></div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/image-helpers.js"></script>
+    <script src="js/preview-handler.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="js/data-mapper/pages/facility-mapper.js"></script>
+    <script src="js/header-footer-loader.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/pages/facility.js"></script>
+  </body>
+</html>

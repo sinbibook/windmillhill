@@ -1,0 +1,55 @@
+<div class="footer_wrap">
+  <!-- 우측 하단 플로팅 버튼 2개. 상담하기(아래) + 예약하기(위) 순으로 쌓인다.
+     예약하기는 `for_m` 이라 모바일에서만 뜨고, 상담하기는 총판A + tripPropertyId 가
+     있을 때 전 화면폭에서 뜬다 (header-footer-mapper.mapConsult). -->
+
+<!-- data-* 속성 : data-consult-button (property.tripPropertyId + partnerType)
+     상담 URL 은 `https://www.bookingplay.co.kr/api/cti_eicn/kakao_happy_talk?tid={tripPropertyId}` -->
+<div id="talk_custom_button" data-consult-wrap>
+  <a title="상담하기" href="#!" target="_blank" data-consult-button>
+    <img src="images/common/consult.png" alt="상담하기" />
+  </a>
+</div>
+
+<!-- data-* 속성 : data-booking-link (property.realtimeBookingId) -->
+<div class="ft_btn_reserve for_m on">
+  <a title="예약하기" href="#!" target="_blank" data-booking-link>
+    <img src="images/common/talk.png" alt="예약하기" />
+  </a>
+</div>
+<div class="footer">
+    <!-- data-* 속성 : data-footer-rural-stay-mark-wrap (customFields.footer.ruralStayMark 가 있을 때만 노출, 기본 숨김)
+         data-footer-rural-stay-mark : 농어촌민박사업자 이미지 (표시마크 + 신고번호, alt = description) -->
+    <div class="ft_rural_stay_mark_wrap" data-footer-rural-stay-mark-wrap style="display: none">
+      <img class="ft_rural_stay_mark" src="" alt="농어촌민박사업자" data-footer-rural-stay-mark />
+    </div>
+    <div class="tel">
+      <a href="tel:" data-footer-phone-link>
+        T.<span data-footer-phone></span>
+      </a>
+    </div>
+    <div class="address">
+      <p>
+        주소 :
+        <span data-footer-address></span>
+      </p>
+      <p>
+        대표 :
+        <span data-footer-representative></span>
+      </p>
+      <p>
+        업체명 :
+        <span data-footer-business-name></span>
+      </p>
+      <p>
+        사업자 번호 :
+        <span data-footer-business-number></span>
+      </p>
+      <!-- 개인정보처리방침 : 원본(collineps · windmillhill)과 같은 트립일레븐 공용 약관 고정 링크. 매핑하지 않는다 -->
+      <p><a href="http://design.trip11.net/privacy/privacy_policy.html" class="privacy" target="_blank">개인정보처리방침</a></p>
+      <!-- data-* 속성 : data-ybs-wrap — ybsId 가 없으면 <p> 째 숨긴다 (a 만 숨기면 앞 구분선이 남는다) -->
+      <p data-ybs-wrap><a href="#!" target="_blank" data-ybs-button>야놀자 YBS</a></p>
+    </div>
+  </div>
+  <div class="copy" data-copyright="COPYRIGHT©{provider}. ALL RIGHTS RESERVED.">COPYRIGHT©트립일레븐. ALL RIGHTS RESERVED.</div>
+</div>

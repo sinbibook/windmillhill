@@ -1,0 +1,44 @@
+/* ============================================================
+   Theme CSS — t-template-B
+   Color reference: dbffpension.co.kr
+
+   Standalone pages use these defaults as-is. In backoffice preview,
+   preview-handler.js may override the same variables from
+   homepage.customFields.theme.
+   ============================================================ */
+
+/* ko-main: Korean serif accents */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap');
+/* ko-sub: source body face */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* en-main: source structural English titles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+/* Fixed script background words */
+@import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+
+:root {
+  /* primary: source warm light banner background */
+  --color-primary: #faf6f0;
+  /* secondary: source dark text/button/point color */
+  --color-secondary: #333333;
+
+  --font-en-main: 'Cinzel', serif;
+  --font-ko-main: 'Noto Serif KR', serif;
+  --font-ko-sub: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif;
+}
+
+/* ============================================================
+   Slot notes
+
+   --font-en-main
+   - structural English titles such as Room Preview, SPECIAL,
+     Beautiful Healing Place, and sub visual titles
+
+   --font-ko-main
+   - Korean serif emphasis blocks
+   - user-entered titles that may contain Korean
+
+   --font-ko-sub
+   - body copy, menus, footer, table text
+
+   ============================================================ */
