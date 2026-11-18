@@ -8,7 +8,7 @@ window.initMainSwipers = function () {
   if (typeof Swiper === 'undefined' || !window.TplSwiper) return;
 
   // 히어로 (풀와이드 페이드)
-  var mainHero = window.TplSwiper.initHero('mainHero', '.sub_visual_box .swiper-container', {
+  window.TplSwiper.initHero('mainHero', '.sub_visual_box .swiper-container', {
     spaceBetween: 0,
     effect: 'fade',
     fadeEffect: { crossFade: true },
@@ -17,17 +17,4 @@ window.initMainSwipers = function () {
       prevEl: '.sub_visual_wide .swiper-button-prev'
     }
   });
-
-  var prev = document.querySelector('.sub_visual_wide .swiper-button-prev');
-  var next = document.querySelector('.sub_visual_wide .swiper-button-next');
-  if (mainHero && prev && next) {
-    prev.onclick = function (e) {
-      e.preventDefault();
-      mainHero.slidePrev();
-    };
-    next.onclick = function (e) {
-      e.preventDefault();
-      mainHero.slideNext();
-    };
-  }
 };

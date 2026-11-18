@@ -415,7 +415,7 @@ special 상세는 `evergreenpension.co.kr/special6.html` 기준으로, 히어로
 
 | data-* 속성                    | 요소                                | JSON 경로                                                                           |
 | ------------------------------ | ----------------------------------- | ----------------------------------------------------------------------------------- |
-| `data-directions-hero-bg`      | `.sub_visual_wide` background-image | `pages.directions.sections[0].hero.images[isSelected][0]`                           |
+| `data-directions-hero-bg`      | `.sub_visual_bg` background-image   | `pages.directions.sections[0].hero.images[isSelected][0]`                           |
 | `data-directions-body-title`   | 본문 `MAP` 아래 설명                | `pages.directions.sections[0].hero.title → "위치안내"`                              |
 | `data-property-address`        | 지도 하단 주소                      | `property.address`                                                                  |
 | `data-directions-notice-title` | 안내 제목                           | `pages.directions.sections[0].notice.title → "자가용 이용시"`                       |

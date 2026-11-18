@@ -461,7 +461,7 @@
 .visual .sub_visual_box .swiper-wrapper,
 .visual .sub_visual_box .swiper-slide {height:100vh;}
 .sub_visual_wide[data-layout-map-hero-bg],
-.sub_visual_wide[data-directions-hero-bg] {height:100vh;}
+.visual .sub_visual_box [data-directions-hero-bg] {height:100vh;}
 
 /* 서브 카테고리 */
 .visual_title {position:absolute;right:10%;bottom:40px;z-index:5;}
@@ -513,8 +513,10 @@
     .visual .sub_visual_box .swiper-container,
     .visual .sub_visual_box .swiper-wrapper,
     .visual .sub_visual_box .swiper-slide {height:750px;}
-    .sub_visual_wide[data-layout-map-hero-bg],
-    .sub_visual_wide[data-directions-hero-bg] {height:750px;}
+    .sub_visual_wide[data-layout-map-hero-bg] {height:750px;}
+    /* 오시는길: 원본은 1023px 이하에서 헤더(흰 배경) 아래로 사진이 이어진다.
+       우리 헤더는 사진 위에 겹치므로 원본의 "맨 위 → 사진 끝" 거리(헤더 80 + 사진 750)만큼 둔다 */
+    .visual .sub_visual_box [data-directions-hero-bg] {height:830px;}
 
 	/* 서브 카테고리 */
 	.visual_title {right:100px;}
@@ -535,8 +537,9 @@
     .visual .sub_visual_box .swiper-container,
     .visual .sub_visual_box .swiper-wrapper,
     .visual .sub_visual_box .swiper-slide {height:550px;}
-    .sub_visual_wide[data-layout-map-hero-bg],
-    .sub_visual_wide[data-directions-hero-bg] {height:550px;}
+    .sub_visual_wide[data-layout-map-hero-bg] {height:550px;}
+    /* 원본: 헤더 65 + 사진 550 */
+    .visual .sub_visual_box [data-directions-hero-bg] {height:615px;}
 
 	/* 서브 카테고리 */
 	.visual_title {right: 50px;bottom:20px;}
@@ -570,8 +573,11 @@
 	.visual .sub_visual_box	.swiper-container,
 	.visual .sub_visual_box .swiper-wrapper,
 	.visual .sub_visual_box .swiper-slide {height: 280px;}
-	.sub_visual_wide[data-layout-map-hero-bg],
-	.sub_visual_wide[data-directions-hero-bg] {height:280px;}
+	.sub_visual_wide[data-layout-map-hero-bg] {height:280px;}
+	/* 오시는길: 원본(map.html)은 헤더 96 + 사진 350 다음에 흰 띠 타이틀 */
+	.sub_map .visual,
+	.sub_map .visual .sub_visual_box {height:auto;}
+	.visual .sub_visual_box [data-directions-hero-bg] {height:446px;}
 
 	/* 서브 카테고리 */
 	.visual_title {position:static;background:#fff;padding:20px 30px;text-align:right;}
