@@ -6,7 +6,7 @@ window.initIndexSwipers = function () {
   if (typeof Swiper === 'undefined' || !window.TplSwiper) return;
 
   // 원본 메인비주얼은 자동 전환이 없다 (loop:false, autoplay 없음) — 화살표로만 넘긴다
-  var indexVisual = window.TplSwiper.init('indexVisual', '.main_visual_box .swiper-container', {
+  window.TplSwiper.init('indexVisual', '.main_visual_box .swiper-container', {
     spaceBetween: 0,
     loop: false,
     navigation: {
@@ -14,19 +14,6 @@ window.initIndexSwipers = function () {
       prevEl: '.main_visual_box .swiper-button-prev'
     }
   });
-
-  var visualPrev = document.querySelector('.main_visual_box .swiper-button-prev');
-  var visualNext = document.querySelector('.main_visual_box .swiper-button-next');
-  if (indexVisual && visualPrev && visualNext) {
-    visualPrev.onclick = function (e) {
-      e.preventDefault();
-      indexVisual.slidePrev();
-    };
-    visualNext.onclick = function (e) {
-      e.preventDefault();
-      indexVisual.slideNext();
-    };
-  }
 
   // 객실 카드: 데스크톱 4장 (객실이 4개 미만이면 3장)
   var indexRoomPerView = window.TplSwiper.roomPerView('.room_list_sld');

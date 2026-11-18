@@ -58,7 +58,14 @@
         <!-- 원본 traffic.html (오시는길).
              원본은 daum roughmap 임베드(고정 key)였으나 좌표 기반 kakao-maps-sdk 로 교체했다. -->
         <section id="content" class="sub6_1 sub_map">
-          <div class="sub_visual_wide visual" data-directions-hero-bg>
+          <div class="sub_visual_wide visual">
+            <!-- 원본처럼 사진 박스(.sub_visual_box)와 타이틀을 나눠야
+                 모바일에서 타이틀이 사진 아래 흰 띠로 내려간다 -->
+            <div class="sub_visual_box">
+              <!-- data-* 속성 : data-directions-hero-bg
+                   pages.directions.sections[0].hero.images[isSelected][0] -->
+              <div class="sub_visual_bg" data-directions-hero-bg></div>
+            </div>
             <div class="visual_title">
               <strong>MAP,</strong>
               <div class="sub_cate_wrap">
